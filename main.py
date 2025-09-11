@@ -138,3 +138,18 @@ int_to_char = {0: '\n', 1: ' ', 2: '!', 3: '"', 4: '$', 5: '%', 6: '&', 7: "'", 
 print(generate(model, new_chars,context,
                context_length,
                int_to_char))
+
+from sacrebleu import corpus_bleu
+
+# hypotheses = list of generated strings
+# references = list of lists, where each inner list contains references for the same hypothesis
+# Example:
+hypotheses = ["i started from the bottom now we here"]
+references = [["i started at the bottom now we here", 
+               "we started at the bottom now we're here"]]
+
+# sacrebleu expects refs grouped by reference index, so we transpose
+refs = list(map(list, zip(*references)))
+
+bleu = corpus_bleu(hypotheses, refs)
+print("BLEU score:", bleu.score)
