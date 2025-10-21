@@ -4,7 +4,11 @@ This project is a **from-scratch GPT-style decoder** implemented in PyTorch, fol
 The goal is to provide an **educational, minimal yet functional** implementation that can generate coherent sequences like lyrics or text character-by-character.  
 
 ---
+## Block Diagram
 
+![GPT Decoder Image](https://github.com/user-attachments/assets/aa2e34b0-469a-46b4-9374-c52b05374a3e)
+
+---
 ##  Features
 - Multi-Head Self-Attention with causal masking  
 - Standard feed-forward layers (2-layer MLP with ReLU)  
